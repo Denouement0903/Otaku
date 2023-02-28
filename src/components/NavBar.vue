@@ -39,6 +39,10 @@
         <li class="nav-item">
             <router-link to="/admin" class="links">Admin</router-link>
         </li>
+        <li class="nav-item">
+            <router-link to="/contact">Contact Us</router-link>
+
+        </li>
       </ul>
       <!-- Left links -->
 
@@ -51,7 +55,7 @@
         </button>
         <a
           class="btn btn-dark px-3"
-          href="https://github.com/Simp4Hitagi/NODE-EOMP-Brandon-Deno"
+          href="https://github.com/Simp4Hitagi/Otaku"
           role="button"
           ><i class="fa-brands fa-square-github"></i></a>
       </div>

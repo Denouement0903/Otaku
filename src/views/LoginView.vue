@@ -1,53 +1,78 @@
 <template >
-    <section class="vh-100">
-  <div class="container-fluid">
-    <div class="row">
-      <div class="col-sm-6 text-black">
+    <!-- Section: Design Block -->
+<section class="text-center text-lg-start">
+  <!-- Jumbotron -->
+  <div class="container py-4">
+    <div class="row g-0 align-items-center">
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <div class="card cascading-right" style="
+            background: hsla(0, 0%, 100%, 0.55);
+            backdrop-filter: blur(30px);
+            ">
+          <div class="card-body p-5 shadow-5 text-center">
+            <h2 class="fw-bold mb-5">Login</h2>
+            <form>
+              <!-- 2 column grid layout with text inputs for the first and last names -->
 
-        <div class="px-5 ms-xl-4">
-          <a class="navbar-brand me-2" href="/">
-    </a>
+              <!-- Email input -->
+              <div class="form-outline mb-4">
+                <input type="email" id="form3Example3" class="form-control" />
+                <label class="form-label" for="form3Example3">Email address</label>
+              </div>
+
+              <!-- Password input -->
+              <div class="form-outline mb-4">
+                <input type="password" id="form3Example4" class="form-control" />
+                <label class="form-label" for="form3Example4">Password</label>
+              </div>
+
+              <!-- Checkbox -->
+              <div class="form-check d-flex justify-content-center mb-4">
+                <p class="small me-3 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
+              </div>
+
+              <!-- Submit button -->
+              <button type="submit" class="btn btn-primary btn-block mb-4">
+                Login
+              </button>
+
+              <!-- Register buttons -->
+              <div class="text-center">
+                <p>Don't have an Account?</p>
+                <a href="/register">Register</a>
+              </div>
+            </form>
+          </div>
         </div>
-
-        <div class="d-flex align-items-center h-custom-2 px-5 mt-2 ms-xl-4  pt-5 pt-xl-0 mt-xl-n5">
-
-          <form style="width: 23rem;">
-
-            <h3 class="fw-normal mb-3 pb-3" style="letter-spacing: 1px;">Log in</h3>
-
-            <div class="form-outline mb-4">
-              <input type="email" id="form2Example18" class="form-control form-control-lg" />
-              <label class="form-label" for="form2Example18">Email address</label>
-            </div>
-
-            <div class="form-outline mb-4">
-              <input type="password" id="form2Example28" class="form-control form-control-lg" />
-              <label class="form-label" for="form2Example28">Password</label>
-            </div>
-
-            <div class="pt-1 mb-4">
-              <button class="btn btn-primary btn-lg btn-block" type="button">Login</button>
-            </div>
-            <p class="small mb-5 pb-lg-2"><a class="text-muted" href="#!">Forgot password?</a></p>
-            <p>Don't have an account? <a href="#!" class="link-info">Register here</a></p>
-          </form>
-
-        </div>
-
       </div>
-      <div class="col-sm-6 px-0 d-none d-sm-block">
-        <img src="../assets/2258803.jpg"
-          alt="Login image" class="w-100 vh-100" style="object-fit: cover; object-position: left;">
+
+      <div class="col-lg-6 mb-5 mb-lg-0">
+        <img src="../assets/uwp535802.jpeg" class="w-100 rounded-4 shadow-4"
+          alt="" />
       </div>
     </div>
   </div>
+  <!-- Jumbotron -->
 </section>
+<!-- Section: Design Block -->
 </template>
 <script>
 export default {
     
 }
 </script>
-<style lang="">
-    
+<style >
+    .cascading-right {
+      margin-right: -50px;
+    }
+
+    @media (max-width: 991.98px) {
+      .cascading-right {
+        margin-right: 0;
+      }
+    }
+    a{
+        text-decoration: none;
+    }
+
 </style>

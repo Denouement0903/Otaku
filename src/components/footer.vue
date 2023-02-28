@@ -6,7 +6,7 @@
     <!-- Section: Social media -->
     <section class="mb-4">
       <!-- Github -->
-      <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/Simp4Hitagi/NODE-EOMP-Brandon-Deno" role="button"
+      <a class="btn btn-outline-light btn-floating m-1" href="https://github.com/Simp4Hitagi/Otaku" role="button"
         ><i class="fab fa-github"></i>
 </a>
     </section>
