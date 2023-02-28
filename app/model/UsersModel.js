@@ -15,6 +15,7 @@ const getUsers = (result) => {
 // single user
 const getUserById = (id, result) => {
     database.query("SELECT * FROM Users WHERE id = ?", [userID], (err, results) => {             
+        return;      
         if(err) {
             console.log(err);
             result(err, null);
@@ -25,7 +26,7 @@ const getUserById = (id, result) => {
 }
 
 const insertUser = (data, result) => {
-    database.query("INSERT INTO Users SET ?", [data], (err, results) => {             
+    database.query("INSERT INTO Users SET ?", [data], (err, results) => {
         if(err) {
             console.log(err);
             result(err, null);

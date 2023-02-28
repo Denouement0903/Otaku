@@ -16,21 +16,26 @@ router.post('/users', (req, res, next) => {
 });
 // Retrieve All Users
 router.get('/users', (req, res, next) => {
+    const users = req.body;
     res.status(200).json({
-        message: 'Retrieved ALL Users'
+        message: 'Retrieved ALL Users',
+        users: users
     })
 });
 // Add One User
 router.post('/users/:userID', (req, res, next) => {
+    const user = req.body;
     res.status(200).json({
-        message: 'Added a SINGLE User'
+        message: 'Added a SINGLE User',
+        user: user
     })
 });
 // Get User by ID
 router.get('/users/:userID', (req, res, next) => {
     const id = req.params.id;
     res.status(200).json({
-        message: 'A new user ID was retrieved'
+        message: 'A new user ID was retrieved',
+        userID: id
     })
 });
 // Update User by ID
@@ -68,7 +73,8 @@ router.post('/products/:productID', (req, res, next) => {
 router.get('/products/:productID', (req, res, next) => {
     const id = req.params.id;
     res.status(200).json({
-        message: 'Product has been retrieved'
+        message: 'Product has been retrieved',
+        productID: id
     })
 });
 
