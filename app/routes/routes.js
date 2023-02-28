@@ -52,6 +52,12 @@ router.post('/products', (req, res, next) => {
         message: 'Added ALL Products'
     })
 });
+// Retrieve ALL Products
+router.get('/products', (req, res, next) => {
+    res.status(201).json({
+        message: 'Added ALL Products'
+    })
+});
 // ADD SINGLE Product
 router.post('/products/:productID', (req, res, next) => {
     res.status(201).json({
