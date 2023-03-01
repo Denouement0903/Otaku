@@ -10,13 +10,13 @@
 </head>
 <body>
     <main>
+      <header class="display-1 d-flex justify-content-center">HOME</header>
         <table class="table table-hover table-bordered border-primary">
             <thead>
               <tr>
                 <th scope="col">Route</th>
-                <th scope="col">First</th>
-                <th scope="col">Last</th>
-                <th scope="col">Handle</th>
+                <th scope="col">URL</th>
+                <th scope="col">Description</th>
               </tr>
             </thead>
             <tbody>
@@ -38,9 +38,11 @@
               <tr>
                 <th scope="row">All Products</th>
                 <td>/products</td>
+                <td>Retrieves all Products</td>
               </tr>
                 <th scope="row">One Product</th>
                 <td>/products/:productID</td>
+                <td>Retrieves a single product</td>
               </tr>
             </tbody>
           </table>
