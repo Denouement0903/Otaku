@@ -34,13 +34,13 @@
           <router-link to="/" class="links">Home</router-link>
         </li>
         <li class="nav-item">
-            <router-link to="/figures" class="links">Figures</router-link>
+            <router-link to="/products" class="links">Figures</router-link>
         </li>
         <li class="nav-item">
             <router-link to="/admin" class="links">Admin</router-link>
         </li>
         <li class="nav-item">
-            <router-link to="/contact">Contact Us</router-link>
+            <router-link to="/contact" class="links">Contact Us</router-link>
 
         </li>
       </ul>

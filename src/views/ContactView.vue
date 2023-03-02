@@ -12,7 +12,7 @@
             <div class="card-body p-5">
               <h2 class="text-uppercase text-center text-white mb-5">Message Us</h2>
 
-              <form>
+              <form action="https://formspree.io/f/moqzwded" method="POST">
 
                 <div class="form-outline mb-4">
                   <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
@@ -29,12 +29,10 @@
                         </div>
 
                 <div class="d-flex justify-content-center">
-                  <button type="button"
-                    class="btn btn-light btn-block btn-lg gradient-custom-4 text-white">Register</button>
+                  <button type="submit"
+                    class="btn btn-light btn-block btn-lg gradient-custom-4 text-white">Send</button>
                 </div>
 
-                <p class="text-center  mt-5 mb-0 text-white">Have already an account? <a href="#!"
-                    class="fw-bold text-white"><u>Login here</u></a></p>
 
               </form>
 

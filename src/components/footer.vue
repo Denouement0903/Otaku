@@ -1,5 +1,5 @@
 <!-- eslint-disable vue/multi-word-component-names -->
-<template lang="">
+<template>
     <footer class="footer bg-dark text-center text-white">
   <!-- Grid container -->
   <div class="container p-4 pb-0">
@@ -26,6 +26,6 @@ export default {
     
 }
 </script>
-<style lang="">
+<style>
 
 </style>

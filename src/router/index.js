@@ -18,14 +18,14 @@ const routes = [
     component: () => import("../views/RegisterView.vue")
   },
   {
-    path: "/figures",
-    name: "figures",
-    component: ()=> import("../views/figuresView.vue")
+    path: "/products",
+    name: "products",
+    component: ()=> import("../views/ProductsView.vue")
   },
   {
-    path: "/figures/:id",
-    name:"figureView",
-    component:()=> import("../views/figureView.vue"),
+    path: "/products/:id",
+    name:"productView",
+    component:()=> import("../views/ProductView.vue"),
     props: true,
   },
   {
