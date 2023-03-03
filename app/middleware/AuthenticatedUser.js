@@ -1,4 +1,5 @@
 const {sign, verify} = require('jsonwebtoken');
+const dotEnv = require('dotenv').config();
 // Creation of Token
 function createToken(user) {
     return sign({
