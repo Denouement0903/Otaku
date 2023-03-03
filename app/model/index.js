@@ -205,16 +205,18 @@ class Product {
 
     }
     deleteProduct(req, res) {
-        const strQry = 
-        `
-        DELETE FROM Products
-        WHERE id = ?;
-        `;
-        database.query(strQry,[req.params.id], (err)=> {
-            if(err) res.status(400).json({err: "The record was not found."});
-            res.status(200).json({msg: "A product was deleted."});
-        })
-    }
+        const userId = req.user.id;
+        const productId = req.params.id;
+        const strQry = `DELETE FROM Products WHERE id = ? AND userId = ?`;
+        database.query(strQry, [productId, userId], (err, result) => {
+          if (err) throw err;
+          if (result.affectedRows === 0) {
+            return res.status(404).json({ error: "Product not found or not authorized" });
+          }
+          res.status(204).end();
+        });
+      }
+      
 
 }
 // Export User class

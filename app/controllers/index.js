@@ -5,12 +5,17 @@ const route = express.Router();
 const {User, Product} = require('../model/index.js');
 const user = new User();
 const product = new Product();
+const authenticateToken = require("../middleware/AuthenticatedUser");
 
 // ===Users====
 
 // Retrieve all users
 route.get('/users', (req, res)=>{
     user.fetchUsers(req, res);
+});
+// Login
+route.post('/users', (req, res)=>{
+    user.login(req, res);
 });
 // Update
 route.put('/user/:id',bodyParser.json(), (req, res)=>{
@@ -30,7 +35,7 @@ route.get('/products', (req, res)=> {
     product.fetchProducts(req, res);
 })
 // Fetch a single product
-route.get('/product/:id', 
+route.get('/product/:id', authenticateToken,
 (req, res)=> {
     product.fetchProduct(req, res);
 })
@@ -47,7 +52,7 @@ bodyParser.json(),
     product.updateProduct(req, res);
 })
 // Delete a product
-route.delete('/product/:id', 
+route.delete('/product/:id', authenticateToken,
 (req, res)=> {
     product.deleteProduct(req, res);
 })
