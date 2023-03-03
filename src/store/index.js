@@ -1,107 +1,117 @@
 import { createStore } from 'vuex'
+import axios from 'axios';
+
+const otaku = "https://node-tuesday-rev-deno.onrender.com/"
 
 export default createStore({
   state: {
+    users: null,
     user: null,
-    users:null,
-    products:null,
-    product:null,
-    showSpinner: true
+    products: null,
+    product: null,
+    showSpinner: true,
+    message: null
 
-
-  },
-  getters: {
   },
   mutations: {
-    setUser: (state, user) => {
-      state.user = user
+    setUsers(state, values) {
+      state.users = values
     },
-    setUsers : (state, users) => {
-      state.users = users
+    setUser(state, value) {
+      state.user = value
     },
-    setProducts :(state, products)=> {
-      state.products = products
+    setProducts(state, values) {
+      state.products = values
     },
-    setProduct :( state, product)=> {
-      state.products = product
+    setProduct(state, value) {
+      state.products = value
     },
-    sortProductsByPrice : (state) => {
+    setSpinner(state, value) {
+      state.showSpinner = value
+    },
+    setMessage(state, value) {
+      state.message = value
+    },
+    clearUsers(state) {
+      state.users = null
+    },
+    clearUser(state) {
+      state.user = null
+    },
+    sortProductsByPrice: (state) => {
       state.products.sort((a, b)=> {
         return a.price - b.price;
       });
       if (!state.asc) {
-        state.products.reverse();
+        state.products.reverse()
       }
-      state.asc = !state.asc;
-    },
-  },
-  actions: {
-    register : async(context, payload) => {
-      const { firstName,lastName, emailAdd , gender,cellphoneNumber, userPass}= payload;
-      fetch("https://otaku-oz7t.onrender.com/users", {
-        method: "POST",
-        body: JSON.stringify({
-          firstName :firstName,
-          lastName: lastName,
-          emailAdd : emailAdd,
-          cellphoneNumber : cellphoneNumber,
-          gender : gender,
-          userPass : userPass
-        }),
-        headers: {
-          "Content-type":"application/json; charset=UTF"
-        }
-      })
-      .then((response) => response.json())
-      .then((json) => context.commit("setUser",json));
-    },
-    login: async(context, payload) => {
-      const {emailAdd, userPass} = payload;
-
-      const response = await fetch(
-        `https://otaku-oz7t.onrender.com/users?email=${emailAdd}&password=${userPass}`
-      );
-      const userData = await response.json();
-      context.commit("setUser", userData[0]);
-    },
-    getProducts: async (context) => {
-      fetch("https://otaku-oz7t.onrender.com/products")
-      .then((res) => res.json())
-      .then((products) => context.commit("setProducts",products));
-    },
-    getProduct: async (context, id) => {
-      fetch("https://otaku-oz7t.onrender.com/products/"+ id)
-      .then((res)=> res.json())
-      .then((product) => context.commit ("setProduct", product));
-    },
-    deleteProduct : async (context, id) => {
-      fetch("https://otaku-oz7t.onrender.com/products/" + id, {
-        method: "DELETE",
-      }).then(()=> context.dispatch ("getProducts"));
-    },
-    createProduct: async (context, product)=> {
-      fetch("https://otaku-oz7t.onrender.com/products/", {
-        method: "POST",
-        body: JSON.stringify(product),
-        headers: {
-          "Content-type": "application/json; charset=UTF-8",
-        },
-      })
-      .then((response) => response.json())
-      .then(() => context.dispatch("getProducts"));
-    },
-    updateProducts: async (context, product) => {
-      fetch ("https://otaku-oz7t.onrender.com/products/"+ product.id, {
-        method: "PUT",
-        body: JSON.stringifiy(product),
-        headers: {
-          "Content- type": "applictaion/json; charset=UTF-8",
-        },
-      })
-      .then((response) => response.json())
-      .then(() => context.dispatch ("getProducts"));
+      state.asc =!state.asc
     }
   },
-  modules: {
+  actions: {
+    async login(context, payload){
+      const res = await axios.post(`${otaku}login`, payload);
+      const {result, err} = await res.data;
+      if (result) {
+        context.commit('setUser', result);
+      }
+      else {
+        context.commit('setMessage', err);
+      }
+    },
+
+    async register(context, payload){
+      let res = await axios.post(`${otaku}register`, payload);
+      let {msg, err} = await res.data;
+      if(msg){
+        context.commit('setMessage', msg);
+      }
+      else {
+        context.commit('setMessage', err);
+      }
+    },
+
+    async fetchUsers(context, payload) {
+      const res = await axios.post(`${otaku}users`, payload);
+      const {msg, err} = await res.data;
+      if(msg) {
+        context.commit('setUsers',msg);
+      }else {
+        context.commit('setUsers',err);
+      }
+    },
+
+    async getProducts({commit}, error){
+      if(error) {
+        console.error(error);
+      } else{
+        const response = await axios.get(`${otaku}products`) 
+        commit('setProducts', response.data);
+      }
+    },
+    async productCreate({dispatch}, product, error){
+      if(error){
+        console.error(error);
+      } else {
+        await axios.post(`${otaku}product`, product) 
+        dispatch('product')
+      }
+    }, 
+    async UpdateUser({dispatch}, user, error){
+      if(error){
+        console.error(error);
+      } else {
+        await axios.post(`/user/${user.id}`, user)
+        dispatch('users')
+      }
+    }, 
+    async DeleteUser({dispatch}, user, error){
+      if(error){
+        console.error(error);
+      } else {
+        await axios.delete(`/user/${user.id}`) 
+        dispatch('users')
+      }
+    }
   }
 })

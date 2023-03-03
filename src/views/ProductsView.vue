@@ -12,7 +12,7 @@
  <div v-if="products" class="flex-container">
    <ProductCard v-for="product of products" :key="product.id" :product="product"></ProductCard>
 </div>
-<div v-else> loading...</div>
+<!-- <div v-else></div> -->
 </template>
 <script>
 
@@ -25,6 +25,14 @@ export default {
          anime: "All",
       }
    },
+   // setup() {
+   //    const store = useStore();
+   //    store.dispatch("productsGet");
+   //    let products = computed(()=> this.$store.state.products)
+   //    return{
+   //       products,
+   //    }
+   // },
    methods: {
       sortPrice() {
          this.$store.commit("sortProductsByPrice");
@@ -32,13 +40,13 @@ export default {
    },
    computed: {
       products() {
-         return this.$store.state.products?.filter((product) => {
-            let isMatch = true;
-            if (!product.title.lowerCase().includes(this.search.toLowerCase())) {
-               isMatch = false;
-            }
-            return isMatch;
-         })
+         return this.$store.state.products;
+      },
+      filtering() {
+         if(this.searching.trim().length > 0) {
+            return this.products.filter((name) => name.prodName.toLowerCase().include(this.searching.trim()))
+         }
+         return this.products
       }
    },
    mounted() {

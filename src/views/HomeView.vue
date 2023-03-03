@@ -93,5 +93,11 @@ background: linear-gradient(to right, rgba(13, 90, 90, 0.5), rgba(31, 109, 148, 
 .kakashi{
   width: 10vw;
 }
+@media only screen and (min-width: 480px) and (max-width: 768px) {
+  .water{
+    width: 100%;
+  }
+
+ }
 
 </style>
