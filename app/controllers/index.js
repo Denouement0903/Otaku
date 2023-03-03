@@ -35,7 +35,7 @@ route.get('/products', (req, res)=> {
     product.fetchProducts(req, res);
 })
 // Fetch a single product
-route.get('/product/:id', authenticateToken,
+route.get('/product/:id',
 (req, res)=> {
     product.fetchProduct(req, res);
 })
@@ -52,7 +52,7 @@ bodyParser.json(),
     product.updateProduct(req, res);
 })
 // Delete a product
-route.delete('/product/:id', authenticateToken,
+route.delete('/product/:id',
 (req, res)=> {
     product.deleteProduct(req, res);
 })
