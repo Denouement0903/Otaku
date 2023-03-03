@@ -15,16 +15,16 @@
               <form action="https://formspree.io/f/moqzwded" method="POST">
 
                 <div class="form-outline mb-4">
-                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" />
+                  <input type="text" id="form3Example1cg" class="form-control form-control-lg" required="required"/>
                   <label class="form-label text-white" for="form3Example1cg">Your Name</label>
                 </div>
 
                 <div class="form-outline mb-4">
-                  <input type="email" id="form3Example3cg" class="form-control form-control-lg" />
+                  <input type="email" id="form3Example3cg" class="form-control form-control-lg" required="required" />
                   <label class="form-label text-white" for="form3Example3cg">Your Email</label>
                 </div>
                 <div class="md-form">
-                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea"></textarea>
+                            <textarea type="text" id="message" name="message" rows="2" class="form-control md-textarea" required="required"></textarea>
                             <label for="message" class="text-white pb-4">Your message</label>
                         </div>
 

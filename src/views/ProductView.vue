@@ -21,7 +21,7 @@ export default {
     }
 };
 </script>
-<style >
+<style scoped >
 .product-details{
     display: flex;
 }

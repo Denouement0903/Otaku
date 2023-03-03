@@ -58,7 +58,7 @@
 
                 <div class="d-flex justify-content-center">
                   <button type="button"
-                    class="btn btn-success btn-block btn-lg gradient-custom-4 text-body">Register</button>
+                    class="btn btn-success btn-block gradient-custom-4 text-body">Register</button>
                 </div>
 
                 <p class="text-center text-muted mt-5 mb-0">Already Have An Account? <a href="/login"
@@ -79,26 +79,17 @@ export default {
     
 }
 </script>
-<style >
+<style scoped>
 .gradient-custom-3 {
-/* fallback for old browsers */
 background: #84fab0;
-
-/* Chrome 10-25, Safari 5.1-6 */
 background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5));
-
-/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 background: linear-gradient(to right, rgba(132, 250, 176, 0.5), rgba(143, 211, 244, 0.5))
 }
 .gradient-custom-4 {
-/* fallback for old browsers */
+
 background: #84fab0;
-
-/* Chrome 10-25, Safari 5.1-6 */
-background: -webkit-linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1));
-
-/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-background: linear-gradient(to right, rgba(132, 250, 176, 1), rgba(143, 211, 244, 1))
+background: -webkit-linear-gradient(to right, rgb(100, 132, 212), rgb(11, 80, 114));
+background: linear-gradient(to right, rgb(73, 115, 178), rgb(39, 78, 98))
 } 
 
     

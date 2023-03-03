@@ -12,7 +12,7 @@
  <div v-if="products" class="flex-container">
    <ProductCard v-for="product of products" :key="product.id" :product="product"></ProductCard>
 </div>
-<div v-else> Busy()</div>
+<div v-else> loading...</div>
 </template>
 <script>
 
