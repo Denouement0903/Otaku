@@ -13,7 +13,7 @@
   </section>
   </div>
   <div class="about">
-    <img src="https://i.postimg.cc/GmNSCn36/29446308f641bb005dbe4519ef02efbd-removebg-preview.png" alt="about" class="image">
+    <img src="https://i.postimg.cc/GmNSCn36/29446308f641bb005dbe4519ef02efbd-removebg-preview.png" alt="about" class="image" loading="lazy">
     <h3 class="container bg-body-emphasis text-white">Anime figures from Otaku, if you are looking for the best place to buy anime figures, our Japanese anime figures are more than just collectables; they’re a fundamental part of otaku culture!
 
 Characters from your favorite animes, mangas, and video games are transformed and brought to life as three-dimensional anime statues and are perfect for decorating your space.
@@ -74,7 +74,7 @@ h1:hover{
 
 .image{
   margin-top: 24%;
-  height: 50vh;
+  height: 400px;
 }
 .gradient-custom-3{
 /* fallback for old browsers */

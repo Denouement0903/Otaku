@@ -78,7 +78,7 @@
       <th scope="col">price</th>
       <th scope="col">prodQuantity</th>
       <th scope="col">imgURL</th>
-      <th scope="col">userId</th>c
+      <th scope="col">userId</th>
       <th scope="col">Delete</th>
       <th scope="col">Edit</th>
     </tr>
@@ -93,7 +93,6 @@
       <td>Otto</td>
       <td>@mdo</td>
       <td>Otto</td>
-      <td>@mdo</td>
       <td><button type="button" class="btn btn-light" data-mdb-ripple-color="dark">Delete</button></td>
       <td><button type="button" class="btn btn-light" data-mdb-ripple-color="dark">Edit</button></td>
     </tr>
@@ -106,7 +105,6 @@
       <td>Thornton</td>
       <td>@fat</td>
       <td>Thornton</td>
-      <td>@fat</td>
       <td><button type="button" class="btn btn-light" data-mdb-ripple-color="dark">Delete</button></td>
       <td><button type="button" class="btn btn-light" data-mdb-ripple-color="dark">Edit</button></td>
       
@@ -120,7 +118,6 @@
       <td>the Bird</td>
       <td>@twitter</td>
       <td>the Bird</td>
-      <td>@twitter</td>
       <td><button type="button" class="btn btn-light" data-mdb-ripple-color="dark">Delete</button></td>
       <td><button type="button" class="btn btn-light" data-mdb-ripple-color="dark">Edit</button></td>
     </tr>
